@@ -1,0 +1,52 @@
+/* General Styles */
+body {
+  font-weight: bold;
+  font-family: 'Ubuntu', serif;
+}
+
+.container{
+  color : #006799;
+}
+
+.navbar {
+  background-color: #343a40;
+  position : sticky;
+  top : 0;
+  z-index: 1;
+}
+
+.nav-links{
+  color : black;
+}
+
+.banner {
+  background-image: url('banner.jpg');
+  background-size: cover;
+  color: white;
+  padding: 100px 0;
+}
+
+.about img {
+  border-radius: 10px;
+}
+
+.service-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.service-box:hover {
+  transform: scale(1.05);
+}
+
+.navbar{
+  padding : 1.5rem 1rem;
+  box-shadow: 1px 1px 5px 0 rgb(238, 238, 238);
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+  color: white;
+}
