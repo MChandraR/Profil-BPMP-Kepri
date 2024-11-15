@@ -6,12 +6,15 @@
   <title>BPMP Kepri </title>
   <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('css/font/ubuntu.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
   <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/flip-card.css') }}">
+  <link rel="icon" href="{{ asset('images/tutwuri.png') }}" sizes="192x192" />
 </head> 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color : white;">
-    <img src="{{ asset('/images/bpmp-logo.png') }}" style="margin-right : 1rem;" alt="" width="50">
+  <nav class="navbar navbar-expand-lg navbar-dark" >
+    <img src="{{ asset('/images/tutwuri.png') }}" style="margin-right : 1rem;" alt="" width="50">
     <h2 class="title" href="#" style="color:#006799">BPMP Provinsi Kepulauan Riau</h2>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -27,25 +30,79 @@
   </nav>
 
   <!-- Banner -->
-  <section class="banner text-center">
-    <div class="container">
-      <h1>Selamat Datang di BPMP Kepri</h1>
-      <p>Tempat informasi dan layanan pendidikan untuk masyarakat Kepulauan Riau</p>
+  <section class="banner">
+    <div class="container ">
+      <p class="main-title"> SELAMAT DATANG DI BPMP KEPRI </p>
+    </div>
+    <div class="background-tint" ></div>
+    <div class="background-body">
+      <img class="background" src="/images/banner/banner1.jpeg" ></img>
+    </div>
+  </section>
+
+  <section>
+    <div class="profile-area">
+      <div class="profile-card">
+          <img src="{{ asset('images/icon/rocket.png') }}" alt="">
+          <span>Visi & Misi</span>
+      </div>
+      <div class="profile-card">
+        <img src="{{ asset('images/icon/task.png') }}" alt="">
+        <span>Tugas dan Fungsi</span>
+      </div> 
+      <div class="profile-card">
+          <img src="{{ asset('images/icon/hr.png') }}" alt="">
+          <span>Sumber Daya Manusia</span>
+      </div>
+      <div class="profile-card">
+        <img src="{{ asset('images/icon/teamwork.png') }}" alt="">
+        <span>Struktur Organisasi</span>
+      </div>
+      <div class="profile-card">
+        <img src="{{ asset('images/icon/customer-service.png') }}" alt="">
+        <span>Maklumat Pelayanan</span>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
+   <br>
   <section class="about py-5 bg-light content">
     <div class="container">
-      <div class="row">
+      <div class="row about-item" >
         <div class="col-md-6">
-          <h2>Tentang Kami</h2>
-          <p>BPMP Kepri berkomitmen memberikan pelayanan pendidikan terbaik di wilayah Sumatera Barat. Kami menyediakan berbagai informasi dan layanan edukatif untuk meningkatkan kualitas pendidikan.</p>
+          <h1 style="color : #006799; ">SELAMAT DATANG DI WEBSITE BPMP PROVINSI KEPULAUAN RIAU</h1><hr>
+          <p>Kami berkomitmen untuk menyediakan informasi yang akurat, cepat, dan mudah diakses guna meningkatkan transparansi dan pelayanan publik. Melalui situs ini, kami berharap dapat memenuhi kebutuhan informasi masyarakat serta memberikan layanan yang lebih baik dan efektif.</p>
+          <button class="more-btn">Selengkapnya</button>
+          <div class="visi-misi-section">
+
+          </div>
         </div>
-        <div class="col-md-6">
-          <img src="about.jpg" class="img-fluid" alt="Tentang Kami">
+        <div class="col-md-6 person-img" id="personImg">
+          <img src="{{ asset('images/person.png') }}" class="img-fluid" alt="Tentang Kami">
         </div>
       </div>
+    </div>
+  </section>  
+
+  <br><br>
+  <h2 class="text-center">Aplikasi Lainnya</h2><hr style="margin: 0 2rem;">
+  <section class="contents " id="scrollable-element" style="overflow-x : auto; width:100%;">
+    <div class="card-list">
+    @for($i = 0; $i <10; $i++)
+      <div class="card flip-card" style="margin-top: <?php echo ($i%2) ? -2 : 2 ?>rem;">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="{{ asset('images/tutwuri.png') }}" style="width : 100%;" alt="">
+            <span class="text-center">Judul App</span>
+          </div>
+           <div class="flip-card-back">
+            <p>Deskripsi aplikasi : ini merupakan field untuk menjelaskan deskripsi aplikasi pada card ini </p>
+            <p>Kunjungi</p>
+          </div>
+        </div>
+      </div>
+    @endfor
     </div>
   </section>
 
@@ -53,6 +110,7 @@
   <section class="services py-5 content">
     <div class="container">
       <h2 class="text-center mb-4">Layanan Kami</h2>
+      <hr><br>
       <div class="row">
         <div class="col-md-4 text-center">
           <div class="service-box p-4">
@@ -80,8 +138,31 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p>&copy; 2024 BPMP Kepri. All rights reserved.</p>
+  <footer class="footer">
+    <h2>Informasi Terkait</h2>
+    <hr>
+    <div class="footer-main">
+      <div>
+        <h4>Kontak</h4>
+        <span>bpmp.kepri@bpmp.go.id </span>
+      </div>
+      <div>
+        <h4>Informasi</h4>
+        <span>Berita </span>
+        <span>Pengumuman </span>
+      </div>
+      <div>
+        <h4>Kontak</h4>
+        <span>Contact </span>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15956.84445609593!2d104.5150556!3d0.9996195!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d96fb5bbc08b69%3A0x488a7090a03cc494!2sBPMP%20Provinsi%20Kepulauan%20Riau!5e0!3m2!1sid!2sid!4v1731501902832!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <br><br>
+    <center>
+      <p style="text-align : center; width : calc(100% - 8rem); position : absolute; bottom : 0;">&copy; 2024 BPMP Kepri. All rights reserved.</p>
+    </center>
+    <img src="{{ asset('images/bpmp-logo.png') }}" alt="" class="logo">
   </footer>
 
   <!-- Bootstrap & jQuery -->
@@ -90,17 +171,45 @@
 </body>
 </html>
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.scrollIntoView({ behavior: "smooth", block: "center" });
+  let isCentered = false;
+  let personImage = document.getElementById('personImg');
+
+  document.addEventListener('wheel', function (event) {
+    const element = document.querySelector('#scrollable-element');
+    if (isCentered) {
+        console.log(true);
+        // Jika elemen sudah di akhir scroll horizontal, biarkan scroll vertikal dokumen
+        if ((event.deltaY > 0 && element.scrollLeft >= element.scrollWidth - element.clientWidth) ||
+            (event.deltaY < 0 && element.scrollLeft <= 0)) {
+            return; // Biarkan scroll berfungsi normal untuk dokumen
+        }
+      
+        // Jika belum di akhir scroll, cegah scroll vertikal dokumen dan lakukan scroll horizontal
+        event.preventDefault();
+        element.scrollLeft += event.deltaY; // Pindahkan scroll horizontal elemen
+        return;
       }
+  }, {passive:false});
+
+
+  function addObserver(element , actionIn , actionOut, treshold = 1){
+    const observer = new IntersectionObserver((e)=>{
+      console.log(e[0].isIntersecting);
+      if(e[0].isIntersecting) actionIn();
+      else actionOut();
+    }, {
+      threshold : treshold
     });
-  }, {
-    threshold: 0.5 // Memicu jika 50% dari elemen terlihat di viewport
+    observer.observe(element);
+  }
+
+
+  document.querySelectorAll('.contents').forEach(section => {
+    addObserver(section , ()=>{isCentered = true}, ()=>{isCentered = false});
   });
 
-  document.querySelectorAll('.content').forEach(section => {
-    observer.observe(section);
-  });
+  addObserver(personImage, ()=>{
+      personImage.style.visibility = "visible";
+      personImage.style.animation = "slideInRight 2s ease 0s 1 normal forwards";
+  }, ()=>{}, .2);
 </script>
