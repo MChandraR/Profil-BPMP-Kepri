@@ -1,0 +1,33 @@
+.modal-title{
+    color : #006799;
+}
+
+/* .modal-dialog{
+    width : 200vw !important; display:flex; background-color: aliceblue; justify-content : left; margin:0 !important; padding : 0 !important;
+}
+ */
+.modal-header img{
+    height : 2.5rem;
+}
+
+/* .modal-content{
+    width: 100vw !important; margin : 2rem !important;
+}
+
+.modal .modal-dialog .modal-content{
+    height: 80vh;
+}
+
+.modal-header{
+    width: 75vw !important;
+} */
+
+
+.modal-body h2{
+    color : #006799;
+}
+
+.modal-body{
+    padding : 3rem !important;
+}
+

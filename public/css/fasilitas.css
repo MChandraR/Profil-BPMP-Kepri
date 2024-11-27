@@ -1,0 +1,63 @@
+.fasilitas{
+    padding : 2rem 7rem;
+}
+
+.fasilitas h2{
+    color : #006799;
+    font-weight : bold;
+}
+
+.fasilitas hr{
+    height: 2px;
+    background-color : rgb(255, 208, 0);
+}
+
+.fasilitas-list{
+    display : flex;
+    position: relative;
+}
+
+.fasilitas-list .part img{
+    width: 100%;
+    display: inline-block;
+    object-fit: cover;
+    object-position: left;
+    transition: all linear .5s;
+}
+
+.fasilitas-list .part{
+    width : 30%;
+    position: relative;
+    opacity: 0;
+    /* transform: skewX(-10deg); */
+}
+
+.barier{
+    padding : -20rem;
+}
+
+
+
+.fasilitas-list .part:hover img{
+    width: 100%;
+    transform: scale(1.5);
+    filter: brightness(.75);
+    z-index: 0;
+    transition: all linear 1s ;
+}
+
+.part span{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    top : 45%;
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    z-index: 1;
+    visibility: hidden;
+}
+
+.fasilitas-list .part :hover span{
+   visibility: hidden;
+}
+
