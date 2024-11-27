@@ -56,6 +56,7 @@ section::-webkit-scrollbar{
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.452);
   width: 12em;
   height: 15em;
+ 
 }
 
 /* .card:hover{

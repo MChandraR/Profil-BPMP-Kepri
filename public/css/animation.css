@@ -1,3 +1,58 @@
+@keyframes BounceInLeft {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateX(-68px);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateX(0);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateX(-28px);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateX(0);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateX(-8px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateX(0);
+	}
+}
+
+@keyframes FadeInForward {
+	0% {
+		opacity: 0;
+		transform: scale(0.6);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
 
 @keyframes myAnim {
 	0% {
@@ -43,7 +98,19 @@
 	}
 }
 
-@keyframes slideInRight {
+@keyframes RollInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px) rotate(-200deg);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0) rotate(0deg);
+	}
+}
+
+@keyframes SlideInRight {
 	0% {
 		opacity: 0;
 		transform: translateX(250px);

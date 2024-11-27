@@ -8,10 +8,16 @@
   <link rel="stylesheet" href="{{ asset('css/font/ubuntu.css') }}">
   <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
   <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/postingan.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/modal.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/fasilitas.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/program.css') }}">
   <link rel="stylesheet" href="{{ asset('css/flip-card.css') }}">
   <link rel="icon" href="{{ asset('images/tutwuri.png') }}" sizes="192x192" />
 </head> 
 <body>
+  @include('modal-home')
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark" >
     <img src="{{ asset('/images/tutwuri.png') }}" style="margin-right : 1rem;" alt="" width="50">
@@ -42,23 +48,23 @@
 
   <section>
     <div class="profile-area">
-      <div class="profile-card">
+      <div class="profile-card" data-toggle="modal" data-target="#visiMisiModal">
           <img src="{{ asset('images/icon/rocket.png') }}" alt="">
           <span>Visi & Misi</span>
       </div>
-      <div class="profile-card">
+      <div class="profile-card" data-toggle="modal" data-target="#tugasFungsiModal">
         <img src="{{ asset('images/icon/task.png') }}" alt="">
         <span>Tugas dan Fungsi</span>
       </div> 
-      <div class="profile-card">
+      <div class="profile-card" data-toggle="modal" data-target="#sumberDayaModal">
           <img src="{{ asset('images/icon/hr.png') }}" alt="">
           <span>Sumber Daya Manusia</span>
       </div>
-      <div class="profile-card">
+      <div class="profile-card" data-toggle="modal" data-target="#strukturOrganisasiModal">
         <img src="{{ asset('images/icon/teamwork.png') }}" alt="">
         <span>Struktur Organisasi</span>
       </div>
-      <div class="profile-card">
+      <div class="profile-card" data-toggle="modal" data-target="#maklumatModal">
         <img src="{{ asset('images/icon/customer-service.png') }}" alt="">
         <span>Maklumat Pelayanan</span>
       </div>
@@ -85,8 +91,96 @@
     </div>
   </section>  
 
+  <!-- Bagian Postingan -->
+  <section>
+    <div class="postingan-main">
+      <div class="postingan-menu">
+        <h2 class="postingan">Postingan</h2>
+        <input type="text" placeholder="Cari postingan">
+      </div>
+      <hr><br>
+      <div class="postingan-list" id="postinganList">
+        @for($i = 0 ; $i<6 ; $i++)
+        <div class="postingan-card" >
+            <span class="judul-postingan">Judul Postingan</span><br>
+            <span class="waktu-postingan">Senin, 20-02-2024</span> <br> <br>
+            <p class="isi-postingan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="tombol-postingan">
+              <button class="kunjungi-postingan">Selengkapnya</button>
+            </div>
+        </div>
+        @endfor
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Bagian Fasilitas -->
+  <section>
+    <div class="fasilitas">
+      <h2>Fasilitas</h2>
+      <hr>
+      <div class="barier">
+        <div class="fasilitas-list" id="fasilitasList">
+          <div class="part" style="clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);">
+            <span>Asrama</span>
+            <img src="{{ asset('images/fasilitas/image1.jpg') }}" alt="">
+          </div>
+          <div class="part" style="margin-left : -3rem; clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);">
+            <span>Ruang Kerja</span>
+            <img src="{{ asset('images/fasilitas/image2.jpg') }}" alt="">
+          </div>
+          <div class="part" style="margin-left : -3rem;clip-path: polygon(20% 0, 100% 0, 80% 100%, 0% 100%);">
+            <span>Ruang Komputer</span>
+            <img src="{{ asset('images/fasilitas/image3.jpg') }}" alt="">
+          </div>
+          <div class="part" style="margin-left : -3rem;clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);">
+            <span>Kantin</span>
+            <img src="{{ asset('images/fasilitas/image4.jpg') }}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Bagian program -->
+  <section>
+    <div class="program">
+      <div class="program-area">
+        <div class="main-part">
+            <h2>Program Kerja</h2>
+            <hr>
+            <span>Daftar Program Kerja</span>
+            <ul>
+              <li>Program 1</li>
+              <li>Program 1</li>
+              <li>Program 1</li>
+              <li>Program 1</li>
+            </ul>
+            <hr>
+            <button class="btn btn-primary" style="background-color : #006799;">Hal</button>
+        </div>
+
+        <div class="list-area" style="overflow-x: auto; z-index:1; margin-left :-10rem;">
+          <div class="program-list">
+            @for($i = 0; $i <10; $i++)
+             <div class="program-card">
+              <h3>Program {{$i}}</h3>
+              <h3>Program {{$i}}</h3>
+              <h3>Program {{$i}}</h3>
+              <h3>Program {{$i}}</h3>
+             </div>
+            @endfor
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bagian aplikasi -->
   <br><br>
-  <h2 class="text-center">Aplikasi Lainnya</h2><hr style="margin: 0 2rem;">
+  <h2 class="text-center" style="color : #006799;">Aplikasi Lainnya</h2><hr style="height : 2px; margin: 0 7rem; background-color : rgb(255, 208, 0);">
   <section class="contents " id="scrollable-element" style="overflow-x : auto; width:100%;">
     <div class="card-list">
     @for($i = 0; $i <10; $i++)
@@ -173,6 +267,9 @@
 <script>
   let isCentered = false;
   let personImage = document.getElementById('personImg');
+  let postinganList = document.getElementById('postinganList');
+  let fasilitasList = document.getElementById('fasilitasList');
+  
 
   document.addEventListener('wheel', function (event) {
     const element = document.querySelector('#scrollable-element');
@@ -210,6 +307,35 @@
 
   addObserver(personImage, ()=>{
       personImage.style.visibility = "visible";
-      personImage.style.animation = "slideInRight 2s ease 0s 1 normal forwards";
+      personImage.style.animation = "SlideInRight 2s ease 0s 1 normal forwards";
   }, ()=>{}, .2);
+
+
+  addObserver(
+    postinganList,
+    ()=>{
+      const children = postinganList.children;
+      for(let child in children){
+        if(children[child].style != null) children[child].style.animation = `FadeInForward 2s ease ${parseFloat(child/5)}s 1 normal forwards`;
+        console.log(`fadeInForward 2s ease ${parseFloat(child/5)}s 1 normal forwards`);
+      }
+    },
+    ()=>{
+
+    }, .2
+  );
+
+    addObserver(fasilitasList, 
+    ()=>{
+      const fasilitas = fasilitasList.children;
+      for(let child in fasilitas){
+        if(fasilitas[child].style != null) fasilitas[child].style.animation = `SlideInRight 2s ease ${child/2}s 1 normal forwards`;
+        console.log(`fadeInForward 2s ease ${parseFloat(child/5)}s 1 normal forwards`);
+      }
+    },
+    ()=>{
+
+    }, .2
+    );
+
 </script>
